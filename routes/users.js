@@ -25,15 +25,20 @@ let users = [
 
 // GET request: Retrieve all users
 router.get("/",(req,res)=>{
-  // Copy the code here
-  res.send("Yet to be implemented")//This line is to be replaced with actual return value
+  // Copy the actual return value code here
+  res.send(users);
+ // res.send("Yet to be implemented")//This line is to be replaced with actual return value
 });
 
 // GET by specific ID request: Retrieve a single user with email ID
 router.get("/:email",(req,res)=>{
-  // Copy the code here
-  res.send("Yet to be implemented")//This line is to be replaced with actual return value
-});
+  // Extract the email paramater from the request URL
+    const email = req.params.email;
+  // Filter the users array to find users whose email matches the extracted email paramter
+    let filtered_users = users.filter((user) => user.email === email);
+ // Send the filtered_users array as the response to the client
+  res.send(filtered_users);
+ });
 
 
 // POST request: Create a new user
