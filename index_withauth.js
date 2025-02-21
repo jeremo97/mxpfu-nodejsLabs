@@ -43,6 +43,7 @@ app.post("/login", (req, res) => {
     if (!user) {
         return res.status(404).json({ message: "Body Empty" });
     }
+    //console.log(user);
     // Generate JWT access token
     let accessToken = jwt.sign({
         data: user
