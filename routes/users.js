@@ -32,6 +32,7 @@ router.get("/",(req,res)=>{
 });
 
 // GET by specific ID request: Retrieve a single user with email ID
+/*
 router.get("/:email",(req,res)=>{
   // Extract the email paramater from the request URL
     const email = req.params.email;
@@ -40,7 +41,12 @@ router.get("/:email",(req,res)=>{
  // Send the filtered_users array as the response to the client
   res.send(filtered_users);
  });
-
+*/
+ // Define a route handler for GET requests to the root path "/"
+router.get("/",(req,res)=>{
+  // Send a JSON response containing the users array, formatted with an indentation of 4 spaces for readability
+  res.send(JSON.stringify({users}, null, 4));
+});
 
 // POST request: Create a new user
 router.post("/",(req,res)=>{
